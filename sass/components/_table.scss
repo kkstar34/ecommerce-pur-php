@@ -1,0 +1,118 @@
+.table--panier{
+    padding: 0rem 0 1rem;
+    
+    @include respond (tab-land){
+        overflow: scroll;
+    }
+}
+
+
+
+table{
+    width: 100%;
+  
+   
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+
+    @include respond (tab-land){
+        width: 90rem;
+    }
+
+    & thead{
+        & tr{
+            & th{
+                text-transform: uppercase;
+                height: 5rem;
+            }
+        }
+    }
+
+    & tbody{
+        background-color: $color-white;
+        
+        & tr{
+            border-bottom: 1px solid #ccc;
+        }
+    }
+}
+
+.article--panier{
+    display: flex;
+    align-items: center;
+    // width: 40%;
+    padding: 2rem 1rem;
+    
+    &__image{
+        & img{
+            width: 12rem;
+        }
+    }
+
+    &__description{
+        margin-left: 1.5rem;
+        font-weight: bold;
+        width: 20rem;
+
+        & .delete{
+            color: $color-red;
+            cursor: pointer;
+        }
+    }
+}
+
+// .article--qty{
+    
+// }
+
+// .article--price{
+    
+// }
+
+.article--total{
+    & h2{
+        color: $color-blue;
+        font-weight: bold;
+    }
+}
+
+.total--box{
+    padding: 4rem 2rem;
+    // margin-top: 2rem;
+    background-color: $color-white;
+
+    & .sitebtn--blue , & .sitebtn--red{
+        padding: 1rem;
+
+        @include respond (tab-land){
+            width: 100%;
+        }
+    }
+}
+
+.g-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & p{
+        color: $color-black;
+        font-weight: bold;
+        font-size: 3rem;
+    }
+
+    & h3{
+        color: $color-blue;
+        font-weight: bold;
+        font-size: 3rem;
+        margin-bottom: 0;
+
+        @include respond (tab-land){
+            font-size: 2.5rem;
+        }
+    }
+
+    // @include respond (tab-land){
+    //     margin-top: 2rem
+    // }
+}

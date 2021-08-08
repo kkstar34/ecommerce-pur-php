@@ -1,0 +1,637 @@
+.card-products{
+    padding: 2rem;
+    background-color: $color-white;
+    position: relative;
+    margin-bottom: 2rem;
+    transition: all .3s ease-in-out;
+    height: 38rem;
+
+    &:hover img{
+        transform: scale(1.08);
+    }
+
+    & .overlay{
+        display: block;
+        opacity: 0;
+        position: absolute;
+        top: 20%;
+        margin-left: 0;
+        width: 7rem;
+
+
+        // @include respond-taportSm {
+
+        //     display: none;
+        //     opacity: 0;
+
+        // }
+
+        & .fa{
+            cursor: pointer;
+            background-color: $color-red;
+            color: $color-white;
+            height: 3.5rem;
+            width: 3.5rem;
+            font-size: 2rem;
+            padding: .7rem;
+            margin: 5%;
+            margin-bottom: 5%;
+        }
+
+        & .btn-secondary{
+            background-color: transparent !important;
+            border: none;
+        }
+
+    }
+
+    &:hover .overlay{
+        opacity: 1;
+        margin-left: 5%;
+        transition: all 0.3s ease-in-out; 
+    } 
+
+
+    &--illustration{
+        
+        & img{
+            height: 20rem;
+            object-fit: contain;
+            width: 100%;
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    & .reduce-price{
+        padding: 1rem 1.5rem;
+        background-color: $color-red;
+        width: 7rem;
+        position: absolute;
+        right: 0;
+        z-index: 111;
+        
+        & p{
+            color: $color-white;
+        }
+    }
+
+    &--description{
+        text-align: center;
+
+        & p{
+            color: $color-blue;
+            font-size: 1.8rem;
+            display: -webkit-box !important;
+            overflow: hidden im !important;
+            -webkit-line-clamp: 1 !important;
+            -webkit-box-orient: vertical !important;
+            text-align: center;
+        }
+
+        & h3{
+            color: $color-blue;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        & del{
+            color: $color-red;
+        }
+    }
+
+    &--button{
+        & .sitebtn--blue{
+            width: 100%;
+        }
+    }
+}
+
+.article-detail{
+    &--product{
+        &__tall{
+            height: 45rem;
+            background-color: $color-white;
+            border: 1px solid $color-blue;
+            & img{
+                height: 40rem;
+                object-fit: contain;
+                width: 100%;
+                border: 3px solid $color-white;
+            }
+        }
+    
+        &__small{
+            margin-top: 2rem;
+            display: flex;
+
+            @include respond (tab-land){
+                flex-wrap: wrap;
+            }
+            
+    
+            & .card-small{
+                margin: 0 1rem 0 0;
+                height: 10rem;
+                margin-bottom: 1rem;
+                justify-content: center;
+                width: 10rem;
+                background-color: $color-white;
+
+                @include respond (tab-land){
+                    height: 6rem;
+                    width: 6rem;
+                }
+    
+    
+                & img{
+                    height: 10rem;
+                    object-fit: cover;
+                    width: 100%;
+                    cursor: pointer;
+                    border: 1px solid $color-blue;
+    
+                   @include respond (tab-land){
+                    height: 6rem; 
+                   }
+                }
+            }
+        }
+    }
+
+    &--description{
+        &__title{
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        &__prize{
+            & h3{
+                color: $color-blue;
+                font-weight: bold;
+                font-size: 3rem;
+            }
+    
+            & del{
+                color: $color-blue;
+            }
+        }
+    }
+
+    // & .qty{
+    //     & form{
+    //         display: flex;
+    //         align-items: center;
+
+    //         & button{
+    //             border-radius: 50%;
+    //             height: 3rem;
+    //             width: 3rem;
+    //             font-weight: bold;
+    //         }
+
+    //         & p{
+    //             height: 3rem;
+    //             width: 6rem;
+    //             border: 1px solid #ccc;
+    //             text-align: center;
+    //             font-weight: bold;
+    //             margin: 1rem;
+    //             padding: .3rem;
+    //         }
+    //     }
+    // }
+
+    & .share{
+        display: flex;
+        align-items: center;
+
+        & p{
+            color: $color-blue;
+            font-weight: bold;
+        }
+
+        & ul{
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            & li{
+                height: 3rem;
+                width: 3rem;
+                background-color: $color-bg;
+                border-radius: 50%;
+                display: flex;
+                margin-left: 1rem;
+                align-items: center;
+                justify-content: center;
+
+                & a{
+                    & img{
+                        height: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.qty{
+    & form{
+        display: flex;
+        align-items: center;
+
+        & button{
+            border-radius: 50%;
+            height: 3rem;
+            width: 3rem;
+            font-weight: bold;
+            transition: all .3s ease-in-out;
+
+            &:hover{
+                background-color: $color-blue;
+                color: $color-white;
+            }
+        }
+
+        & p{
+            height: 3rem;
+            width: 6rem;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-weight: bold;
+            margin: 1rem;
+            padding: .3rem;
+        }
+    }
+}
+
+.marque-card{
+    & a{
+        & img{
+            filter: brightness(95%);
+            transition: all .3s ease-in-out;
+            object-fit: cover;
+
+            &:hover{
+                filter: brightness(100%);
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+// 
+.support--card{
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    transition: all .2s ease-in-out;
+    &__illustration{
+        & img{
+            height: 6rem;
+        }
+    }
+
+    &__description{
+        margin-left: 2rem;
+        & h3{
+            font-weight: bold;
+            color: $color-blue;
+        }
+    }
+
+    &:hover{
+        transform: scale(1.02);
+    }
+}
+
+.google-play--cards{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & a{
+        width: 48%;
+        height: 5rem;
+
+        & img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // & button{
+    //     border-radius: .8rem;
+    //     padding: 0 0 .8rem;
+    //     background: transparent;
+    //     border: 1px solid black;
+    //     width: 48%;
+    //     height: 4rem;
+    // }
+    
+
+    // & .google-play--cards__card{
+    //     // border-radius: .8rem;
+    //     // width: 20rem;
+    //     display: flex;
+    //     align-items: center;
+    //     height: 2rem;
+    //     justify-content: center;
+    //     // margin-top: .5rem;
+
+    //     & img{
+    //         // height: 2rem;
+    //         height: 2rem;
+    //         margin-top: 2rem;
+    //     }
+
+    //     &--illus{
+    //         padding: 0 .3rem;
+    //         text-align: left;
+
+    //         & span{
+    //             font-size: .7rem;
+    //             color: $color-black;
+    //         }
+
+    //         & p{
+    //             font-weight: bold;
+    //             color: $color-black;
+    //             font-size: 1rem;
+    //         }
+    //     }
+    // }
+}
+
+.filter-side{
+    background-color: $color-white;
+    padding:1rem ;
+    border-radius: .7rem;
+
+    &__categorie{
+        border-bottom: 1px solid rgb(236, 228, 228);
+        & ul{
+            // padding: 1rem 2rem;
+
+            & a{
+                & li{
+                    padding: 1rem;
+                    background: white;
+     
+                    &:hover{
+                        background-color: #ccc;
+                    }
+                }
+             }
+        }
+    }
+
+    &__range{
+        border-bottom: 1px solid rgb(236, 228, 228);
+        padding: 2rem 0;
+    }
+
+
+    &__evaluation{
+        border-bottom: 1px solid rgb(236, 228, 228);
+        padding: 2rem 0;
+    }
+
+    &__evaluationven{
+        // border-bottom: 1px solid rgb(236, 228, 228);
+        padding: 2rem 0;
+    }
+}
+
+.card-contenu{
+
+    border: 1px solid #ccc;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+
+    &__title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        border-bottom: 1px solid #ccc;
+
+        & .write{
+            height: 4rem;
+            min-width: 4rem;
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            cursor: pointer;
+
+
+            &:hover{
+                color: $color-white;
+                background-color: rgba($color-blue, .2);
+            }
+        }
+    }
+
+
+    &__bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1rem 0;
+        border-top: 1px solid #ccc;
+
+        & .write{
+            height: 4rem;
+            min-width: 4rem;
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            cursor: pointer;
+
+
+            &:hover{
+                color: $color-white;
+                background-color: rgba($color-blue, .2);
+            }
+        }
+    }
+
+    &__text{
+        padding: 1rem;
+
+        & h3{
+            font-weight: bold;
+        }
+    }
+
+    &__button{
+        padding: 1rem;
+
+        & button{
+            padding: 1rem;
+            font-weight: bold;
+            color: $color-blue;
+            background-color: transparent;
+            transition: all .3s ease-in-out ;
+
+            &:hover{
+                background-color: rgba($color-blue, .2);
+            }
+        }
+    }
+}
+
+.cards-elts-marque{
+    margin: 2rem 0;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: $color-white;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        transform: scale(1.02);
+    }
+
+    &__illustration{
+        & img{
+            height: 15rem;
+        }
+    }
+
+    &__description{
+        & h3{
+            font-weight: bold;
+            margin-top: 2rem;
+            color: $color-blue;
+        }
+    }
+}
+
+
+.articles-side{
+    background-color: $color-white;
+    // border: 1px solid #ccc;
+    border-radius: .8rem;
+    &--title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem ;
+        border-bottom: 1px solid #ccc;
+        & h3{
+            font-weight: bold;
+            font-size: 2rem;
+
+            @include respond(tab-port){
+                font-size: 1.4rem;
+            }
+        }
+
+        & select{
+            padding: 1rem 0;
+            background-color: transparent;
+            transition: all .2s ease-in-out;
+            font-weight: bold;
+            outline: none;
+            // border: none;
+            border-radius: .8rem;
+
+            & option{
+                font-weight: bold;
+            }
+
+            &:hover{
+                background-color: rgba($color-blue, .2);
+                color: $color-blue;
+            }
+
+            @include respond(tab-port){
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &--result{
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &--produits{
+        padding: 1rem;
+        transition: all .3s ease-in-out;
+
+        &:hover{
+            transform: scale(1.01);
+            box-shadow: $box-shadow;
+            background-color:$color-white;
+        }
+
+        & img{
+            // height: rem;
+            width: 14rem;
+            height: 14rem;
+            // margin: 0 auto;
+            
+            @include respond(tab-port){
+                height: 20rem;
+                margin: 0 auto;
+                object-fit: contain;
+            }
+        }
+
+        &__descrip{
+            & span{
+                background-color: $color-red;
+                padding: 0 1rem;
+                color: $color-white;
+                border-radius: .7rem;
+            }
+
+            & h3{
+                margin-top: 1rem;
+                font-weight: 600;
+            }
+        }
+
+        &__prizes{
+            text-align: right;
+            margin-top: 2rem;
+            height: 10rem;
+
+            @include respond(tab-port){
+               text-align: left;
+            }
+
+    
+            & h3{
+                font-weight: bold;
+                font-size: 2rem;
+            }
+
+            & del{
+                font-weight: 600;
+            }
+
+            & span{
+                background-color: rgba($color-red, .2);
+                color: $color-red;
+                padding: 0 1rem;
+                font-weight: 600;
+                border-radius: .7rem;
+            }
+        }
+    }
+
+    & button{
+        // width: 18rem;
+        font-size: 1.3rem;
+    }
+}
+

@@ -1,0 +1,70 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30rem;
+    height: 100%;
+    z-index: 1234;
+    background-color: #1380b4;
+    padding: 2rem;
+    transition: all .3s;
+
+    .card-accordion{
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.514);
+        padding: 1rem 0;
+        span{
+            font-size: 1.6rem;
+            color: white;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            & .icon{
+                height: 1.2rem;
+                width: 1.2rem;
+
+                & img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                    transition: all .3s;
+                }
+            }
+
+            .arrowPivote-rotate{
+                transform: rotate(180deg);
+            }
+        }
+
+        & .card-body{
+            background-color: white;
+            
+
+            & a{
+                display: block;
+                font-size: 1.5rem;
+                color: rgba(0, 0, 0, 0.432);
+                margin-bottom: .5rem;
+            }
+        }
+    }
+
+    & .icon-close-sidebar{
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        text-align: center;
+        background-color: white;
+        margin-bottom: 2.5rem;
+
+        & img{
+            height: 100%;
+            width: 50%;
+            object-fit: contain;
+        }
+    }
+
+    &.active{
+        right: 0;
+    }
+}

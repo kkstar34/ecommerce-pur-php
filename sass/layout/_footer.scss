@@ -1,0 +1,115 @@
+.footer-top{
+    padding: 4rem 0;
+    background-color: $color-white;
+    & img{
+        height: 7rem;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+    }
+
+    & h3{
+        color: $color-blue;
+        font-weight: bold;
+    }
+
+    & p{
+        color: $color-blue;
+    }
+
+
+    & .newsletter{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        & form{
+            display: flex;
+            align-items: center;
+            // justify-content: space-between;
+
+            @include respond (tab-land){
+                display: block;
+            }
+        }
+
+        & button{
+            margin-left: 1rem;
+            padding: 1.1rem 1rem;
+
+            @include respond (tab-land){
+                margin-left: 0;
+            }
+        }
+
+        & .form-group{
+            margin-bottom: 0;
+            width: 65%;
+            border: 1px solid $color-blue;
+            border-radius: 8px;
+            padding: 0 1rem;
+            // padding: 1.5rem 0;
+
+            @include respond (tab-land){
+                width: 100%;
+                margin-top: 1.5rem;
+            }
+
+            & img{
+                height: 2rem;
+                margin-top: 1.3rem;
+            }
+
+            & input{
+                border: none;
+                outline: none;
+                padding: 1rem ;
+                width: 90%;
+            }
+        }
+    }
+}
+
+// .google-play{
+    
+// }
+
+.footer-bottom{
+    background-color: $color-blue;
+    padding: 5rem 0;
+
+    & h2{
+        color: $color-white;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    & ul{
+        & li{
+            margin-top: 1rem;
+            font-weight: 500;
+            & a{
+                color: $color-white;
+                transition: all .3s ease-in-out;
+                font-size: 1.5rem;
+
+                &:hover{
+                    color: $color-red;
+                }
+            }
+
+        }
+    }
+
+    & .signature{
+        margin-top: 2rem;
+        text-align: center;
+        & p{
+            color: $color-white;
+            font-weight: bold;
+        }
+        & span{
+            & a{
+                color: $color-red;
+            }
+        }
+    }
+}

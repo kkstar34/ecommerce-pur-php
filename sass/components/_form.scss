@@ -1,0 +1,464 @@
+/* form starting stylings ------------------------------- */
+.group { 
+    position:relative; 
+    margin-bottom:30px; 
+  
+    & input{
+        font-size:15px;
+        padding: 30px 10px 10px 5px;
+        display:block;
+        width: 100%;
+        border:none;
+        border-bottom:1px solid #757575;
+
+        &:focus{
+          outline:none; 
+        }
+    }
+
+    & select{
+      font-size:15px;
+      padding: 30px 10px 10px 5px;
+      display:block;
+      width: 100%;
+      border:none;
+      border-bottom:1px solid #757575;
+
+      &:focus{
+        outline:none; 
+        border-bottom: 2px;
+      }
+  }
+        
+      
+      /* LABEL ======================================= */
+      & label 				 {
+        color:#999; 
+        font-size:15px;
+        font-weight:600;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:10px;
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+      }
+    
+      /* active state */
+      input:focus ~ label, input:valid ~ label 		{
+        top:-3px;
+        font-size:14px;
+        color:$color-blue;
+      }
+
+      input:focus ~ label, select:valid ~ label 		{
+        top:-3px;
+        font-size:14px;
+        color:$color-blue;
+      }
+      
+      /* BOTTOM BARS ================================= */
+      .bar 	{ position:relative; display:block;}
+      .bar:before, .bar:after 	{
+        content:'';
+        height:2px; 
+        width:0;
+        bottom:1px; 
+        position:absolute;
+        background:$color-blue; 
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+      }
+      .bar:before {
+        left:50%;
+      }
+      .bar:after {
+        right:50%; 
+      }
+      
+      /* active state */
+      input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width:50%;
+      }
+      
+      /* HIGHLIGHTER ================================== */
+      .highlight {
+        position:absolute;
+        height:60%; 
+        width:100px; 
+        top:25%; 
+        left:0;
+        pointer-events:none;
+        opacity:0.5;
+      }
+      
+      /* active state */
+      input:focus ~ .highlight {
+        -webkit-animation:inputHighlighter 0.3s ease;
+        -moz-animation:inputHighlighter 0.3s ease;
+        animation:inputHighlighter 0.3s ease;
+      }
+      
+      /* ANIMATIONS ================ */
+      @-webkit-keyframes inputHighlighter {
+          from { background:$color-blue; }
+        to 	{ width:0; background:transparent; }
+      }
+      @-moz-keyframes inputHighlighter {
+          from { background:$color-blue; }
+        to 	{ width:0; background:transparent; }
+      }
+      @keyframes inputHighlighter {
+          from { background:$color-blue; }
+        to 	{ width:0; background:transparent; }
+    }
+}
+
+.form-title{
+    & h3{
+      color: $color-blue;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+}
+
+.form-big{
+  width: 80%;
+  margin: 0 auto;
+  
+  // background-color: black;
+
+    & .form-texte{
+      height: 20rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & .mdp-o{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4rem;
+
+        & a{
+          font-weight: bold;
+          color: $color-blue;
+        }
+    }
+
+    .form--button{
+      margin-top: 4rem;
+      position: relative;
+
+      & p{
+        text-align: center;
+        &::after{
+            content: '';
+            width: 45%;
+            height: 2px ;
+            background-color: #ccc;
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+
+        &::before{
+            content: '';
+            width: 45%;
+            height: 2px ;
+            background-color: #ccc;
+            position: absolute;
+            top: 50%;
+            right:0;
+        }
+      }
+      
+      & button{
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+}
+
+.connect{
+
+  & img{
+    height: 4rem;
+  }
+
+
+  & p{
+    margin-top: 1rem;
+  }
+
+
+
+  // button radio***********************************************************************
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -100%;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $color-red;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $color-red;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+}
+
+
+
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+.av{
+  text-align: center;
+  margin-top: 1rem;
+  & p{
+    font-weight: bold;
+  }
+
+  & a{
+    color: $color-blue;
+    font-weight: bold;
+  }
+}
+
+
+.filter-side__title{
+  & h3{
+    font-weight: bold;
+  }
+}
+
+
+
+
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.range-slider {
+  width: 100%;
+  margin: auto;
+  // text-align: center;
+  position: relative;
+  height: 6rem;
+}
+
+.range-slider svg,
+.range-slider input[type=range] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+input[type=number] {
+  border: 1px solid #ddd;
+  // text-align: center;
+  font-size: 1.5rem;
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type=number]:invalid,
+input[type=number]:out-of-range {
+  border: 2px solid #ff6347;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: orange;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: orange;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: orange;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: orange;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-webkit-slider-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid orange;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: orange;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: orange;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-moz-range-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid orange;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: orange;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower,
+input[type=range]::-ms-fill-upper {
+  background: orange;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-ms-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid orange;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: orange;
+  cursor: pointer;
+}
