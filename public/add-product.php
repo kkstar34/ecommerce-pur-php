@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
           //  echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
          
-            $request = $conn->prepare("INSERT INTO articles(name , slug, details, price, description, image, images) VALUES(:name, :slug, :details,:price, :description,:image, images)");
+            $request = $conn->prepare("INSERT INTO articles(name , slug, details, price, description, image, images) VALUES(:name, :slug, :details,:price, :description,:image, :images)");
             $request->bindValue(":name", $name);
             $request->bindValue(":slug", $name);
             $request->bindValue(":details", $description);
